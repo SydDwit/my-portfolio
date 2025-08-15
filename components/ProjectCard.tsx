@@ -1,7 +1,7 @@
 "use client";
 import Image from 'next/image'
 import Link from 'next/link'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
 type Project = {
   id: number
@@ -22,6 +22,41 @@ type Props = {
 export default function ProjectCard({ project }: Props) {
   const [isHovered, setIsHovered] = useState(false)
   const [showAllTechs, setShowAllTechs] = useState(false)
+  const [isDarkMode, setIsDarkMode] = useState(false)
+
+  // Detect dark mode
+  useEffect(() => {
+    const checkDarkMode = () => {
+      setIsDarkMode(document.documentElement.classList.contains('dark'))
+    }
+    
+    // Initial check
+    checkDarkMode()
+    
+    // Listen for changes
+    const observer = new MutationObserver(checkDarkMode)
+    observer.observe(document.documentElement, {
+      attributes: true,
+      attributeFilter: ['class']
+    })
+    
+    return () => observer.disconnect()
+  }, [])
+
+  // Function to determine if image should be inverted
+  const shouldInvertImage = (originalPath: string, isDark: boolean) => {
+    if (!isDark) return false // Light mode uses original images
+    
+    // Check if this is an image that should be inverted in dark mode
+    const filename = originalPath.split('/').pop()?.replace('.svg', '')
+    const invertibleImages = [
+      'vote', 'disease', 'diabetes', 'resume', 'portfolio'
+    ]
+    
+    return filename && invertibleImages.includes(filename)
+  }
+
+  const shouldInvert = shouldInvertImage(project.image, isDarkMode)
 
   return (
     <div 
@@ -36,7 +71,13 @@ export default function ProjectCard({ project }: Props) {
             alt={project.title}
             width={400}
             height={200}
-            className="h-48 w-full object-cover transition-all duration-500 group-hover:scale-110 group-hover:brightness-110"
+            className={`h-48 w-full object-cover transition-all duration-500 group-hover:scale-110 group-hover:brightness-110 ${
+              shouldInvert ? 'filter-invert' : ''
+            }`}
+            style={{
+              filter: shouldInvert ? 'invert(1)' : 'invert(0)',
+              transition: 'filter 0.3s ease-in-out, transform 0.5s ease, filter 0.5s ease'
+            }}
           />
           {/* Animated border on hover */}
           <div className="absolute inset-0 rounded-t-xl border-2 border-transparent group-hover:border-primary/30 transition-all duration-300" />

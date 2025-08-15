@@ -160,3 +160,150 @@
     scroll-behavior: auto !important;
   }
 }
+
+/* Custom Animations for About Page Developer Section */
+@keyframes float-delayed {
+  0%, 100% { transform: translateY(-5px) rotate(-3deg); }
+  50% { transform: translateY(-15px) rotate(3deg); }
+}
+
+@keyframes float-slow {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-8px) rotate(-5deg); }
+}
+
+@keyframes float-reverse {
+  0%, 100% { transform: translateY(-8px) rotate(3deg); }
+  50% { transform: translateY(2px) rotate(-3deg); }
+}
+
+@keyframes float-coffee {
+  0%, 100% { transform: translateY(0px) scale(1) rotate(0deg); }
+  25% { transform: translateY(-3px) scale(1.1) rotate(2deg); }
+  75% { transform: translateY(-6px) scale(0.95) rotate(-2deg); }
+}
+
+@keyframes typing {
+  0% { width: 0; }
+  100% { width: 100%; }
+}
+
+@keyframes blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
+
+@keyframes fade-in-delay-1 {
+  0%, 30% { opacity: 0; transform: translateX(-10px); }
+  100% { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes fade-in-delay-2 {
+  0%, 60% { opacity: 0; transform: translateX(-10px); }
+  100% { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes fade-in-delay-3 {
+  0%, 90% { opacity: 0; transform: translateX(-10px); }
+  100% { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes particle-1 {
+  0% { transform: translateY(0) translateX(0) scale(0); opacity: 0; }
+  20% { opacity: 1; scale: 1; }
+  100% { transform: translateY(-100px) translateX(50px) scale(0); opacity: 0; }
+}
+
+@keyframes particle-2 {
+  0% { transform: translateY(0) translateX(0) scale(0); opacity: 0; }
+  25% { opacity: 1; scale: 1; }
+  100% { transform: translateY(-80px) translateX(-40px) scale(0); opacity: 0; }
+}
+
+@keyframes particle-3 {
+  0% { transform: translateY(0) translateX(0) scale(0); opacity: 0; }
+  30% { opacity: 1; scale: 1; }
+  100% { transform: translateY(90px) translateX(60px) scale(0); opacity: 0; }
+}
+
+@keyframes particle-4 {
+  0% { transform: translateY(0) translateX(0) scale(0); opacity: 0; }
+  35% { opacity: 1; scale: 1; }
+  100% { transform: translateY(70px) translateX(-50px) scale(0); opacity: 0; }
+}
+
+@keyframes particle-5 {
+  0% { transform: translateY(0) translateX(0) scale(0); opacity: 0; }
+  40% { opacity: 1; scale: 1; }
+  100% { transform: translateY(-60px) translateX(-30px) scale(0); opacity: 0; }
+}
+
+@keyframes fade-in-anim {
+  0% { opacity: 0; transform: translateY(10px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+/* Apply custom animations */
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-float-delayed {
+  animation: float-delayed 4s ease-in-out infinite 0.5s;
+}
+
+.animate-float-slow {
+  animation: float-slow 5s ease-in-out infinite 1s;
+}
+
+.animate-float-reverse {
+  animation: float-reverse 3.5s ease-in-out infinite 1.5s;
+}
+
+.animate-float-coffee {
+  animation: float-coffee 2s ease-in-out infinite 2s;
+}
+
+.animate-typing {
+  animation: typing 2s steps(10) infinite;
+}
+
+.animate-blink {
+  animation: blink 1s infinite;
+}
+
+.animate-fade-in-delay-1 {
+  animation: fade-in-delay-1 3s ease-out infinite;
+}
+
+.animate-fade-in-delay-2 {
+  animation: fade-in-delay-2 3s ease-out infinite;
+}
+
+.animate-fade-in-delay-3 {
+  animation: fade-in-delay-3 3s ease-out infinite;
+}
+
+.animate-particle-1 {
+  animation: particle-1 4s ease-out infinite;
+}
+
+.animate-particle-2 {
+  animation: particle-2 5s ease-out infinite 1s;
+}
+
+.animate-particle-3 {
+  animation: particle-3 4.5s ease-out infinite 2s;
+}
+
+.animate-particle-4 {
+  animation: particle-4 5.5s ease-out infinite 3s;
+}
+
+.animate-particle-5 {
+  animation: particle-5 4s ease-out infinite 4s;
+}
+
+.animate-fade-in {
+  animation: fade-in-anim 2s ease-out;
+}

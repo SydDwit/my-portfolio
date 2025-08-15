@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react'
 import SocialBar from '@/components/SocialBar'
 import SectionHeading from '@/components/SectionHeading'
 import ProjectCard from '@/components/ProjectCard'
+import SkillTag from '@/components/SkillTag'
 import { projects } from '@/src/data/projects'
 
 export default function Home() {
@@ -138,35 +139,47 @@ export default function Home() {
           <SectionHeading title="About Me" />
           <div className="max-w-4xl mx-auto mt-8">
             <div className="bg-card rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow duration-300">
-              <p className="text-lg text-gray-600 dark:text-gray-300 leading-relaxed mb-6">
+              <p className="text-lg text-gray-600 dark:text-gray-300 leading-relaxed mb-8 text-center">
                 I&apos;m a passionate full-stack developer with experience in modern web technologies. 
                 I love creating beautiful, functional, and user-friendly applications that solve real-world problems.
               </p>
               
-              {/* Skills with animated progress bars */}
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
-                {[
-                  { name: "React/Next.js", level: 95 },
-                  { name: "TypeScript", level: 90 },
-                  { name: "Node.js", level: 85 },
-                  { name: "UI/UX Design", level: 80 }
-                ].map((skill, index) => (
-                  <div key={skill.name} className="group">
-                    <div className="flex justify-between mb-2">
-                      <span className="text-sm font-medium">{skill.name}</span>
-                      <span className="text-sm text-muted-foreground">{skill.level}%</span>
-                    </div>
-                    <div className="h-2 bg-secondary rounded-full overflow-hidden">
-                      <div 
-                        className="h-full bg-gradient-to-r from-primary to-primary/60 rounded-full transition-all duration-1000 ease-out"
-                        style={{ 
-                          width: isVisible.about ? `${skill.level}%` : '0%',
-                          transitionDelay: `${index * 200}ms`
-                        }}
-                      />
-                    </div>
+              {/* Clean Skills Section */}
+              <div className="space-y-6">
+                <h3 className="text-xl font-semibold text-center mb-6">Core Technologies</h3>
+                
+                {/* Frontend Skills */}
+                <div className="text-center">
+                  <h4 className="text-sm font-semibold text-gray-500 dark:text-gray-400 mb-3 uppercase tracking-wide">Frontend</h4>
+                  <div className="flex flex-wrap justify-center gap-3 mb-6">
+                    <SkillTag name="React" />
+                    <SkillTag name="Next.js" />
+                    <SkillTag name="TypeScript" />
+                    <SkillTag name="Tailwind CSS" />
                   </div>
-                ))}
+                </div>
+
+                {/* Backend Skills */}
+                <div className="text-center">
+                  <h4 className="text-sm font-semibold text-gray-500 dark:text-gray-400 mb-3 uppercase tracking-wide">Backend</h4>
+                  <div className="flex flex-wrap justify-center gap-3 mb-6">
+                    <SkillTag name="Node.js" />
+                    <SkillTag name="Python" />
+                    <SkillTag name="FastAPI" />
+                    <SkillTag name="PostgreSQL" />
+                  </div>
+                </div>
+
+                {/* Additional Skills */}
+                <div className="text-center">
+                  <h4 className="text-sm font-semibold text-gray-500 dark:text-gray-400 mb-3 uppercase tracking-wide">Tools & Others</h4>
+                  <div className="flex flex-wrap justify-center gap-3">
+                    <SkillTag name="Git" />
+                    <SkillTag name="🎨 UI/UX Design" />
+                    <SkillTag name="🚀 Performance" />
+                    <SkillTag name="📱 Responsive" />
+                  </div>
+                </div>
               </div>
             </div>
           </div>
