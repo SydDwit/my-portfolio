@@ -13,68 +13,62 @@ export interface Project {
 export const projects: Project[] = [
   {
     id: 1,
-    title: 'E-commerce Platform',
-    description: 'A full-stack e-commerce platform built with Next.js and Stripe integration.',
-    longDescription: 'A comprehensive e-commerce solution featuring user authentication, product management, shopping cart functionality, and secure payment processing through Stripe. Built with modern technologies for optimal performance and user experience.',
-    image: '/projects/project1.svg',
-    technologies: ['Next.js', 'React', 'TypeScript', 'Stripe', 'PostgreSQL', 'Tailwind CSS'],
-    liveUrl: 'https://example-ecommerce.com',
-    githubUrl: 'https://github.com/yourusername/ecommerce-platform',
-    slug: 'ecommerce-platform'
+    title: 'Vote Sphere',
+    description: 'Built a secure web-based voting platform enabling user authentication, vote casting, and result tallying in real time.',
+    longDescription: 'A comprehensive voting solution featuring user authentication, vote management, and real-time result tallying. Built with modern technologies for optimal performance and user experience.',
+    image: '/vote.svg',
+    technologies: ['html', 'css', 'php', 'mysql'],
+    githubUrl: 'https://github.com/SydDwit/VoteSphere',
+    slug: 'vote-sphere'
   },
   {
     id: 2,
-    title: 'Task Management App',
-    description: 'A collaborative task management application with real-time updates.',
-    longDescription: 'A modern task management application that enables teams to collaborate effectively. Features include real-time updates, drag-and-drop functionality, user roles, and comprehensive project tracking.',
-    image: '/projects/project2.svg',
-    technologies: ['React', 'Node.js', 'Socket.io', 'MongoDB', 'Express'],
-    liveUrl: 'https://example-tasks.com',
-    githubUrl: 'https://github.com/yourusername/task-manager',
-    slug: 'task-management-app'
+    title: 'Disease Prediction System',
+    description: 'A machine learning-based system for predicting disease outbreaks.',
+    longDescription: 'An advanced disease prediction system that leverages machine learning algorithms to analyze health data and predict potential outbreaks. Features include data visualization, real-time monitoring, and automated reporting.',
+    image: '/disease.svg',
+    technologies: ['React', 'Python', 'fastAPI', 'mysql'],
+    githubUrl: 'https://github.com/SydDwit/disease-prediction',
+    slug: 'disease-prediction-system'
   },
   {
     id: 3,
-    title: 'Weather Dashboard',
-    description: 'A responsive weather dashboard with location-based forecasts.',
-    longDescription: 'An intuitive weather dashboard that provides detailed weather information based on user location. Includes 7-day forecasts, interactive maps, and weather alerts.',
-    image: '/projects/project1.svg',
-    technologies: ['React', 'OpenWeather API', 'Chart.js', 'CSS3'],
-    liveUrl: 'https://example-weather.com',
-    githubUrl: 'https://github.com/yourusername/weather-dashboard',
-    slug: 'weather-dashboard'
+    title: 'Diabetes Prediction System',
+    description: 'A machine learning-based system for predicting diabetes risk.',
+    longDescription: 'An advanced diabetes prediction system that leverages machine learning algorithms to analyze health data and predict potential diabetes risk. Features include data visualization, real-time monitoring, and automated reporting.',
+    image: '/diabetes.svg',
+    technologies: ['React', 'Python', 'fastAPI', 'mysql'],
+    githubUrl: '',
+    slug: 'diabetes-prediction-system'
   },
   {
     id: 4,
-    title: 'Social Media Analytics',
-    description: 'Analytics dashboard for social media performance tracking.',
-    longDescription: 'A comprehensive analytics platform for tracking social media performance across multiple platforms. Features include engagement metrics, audience insights, and automated reporting.',
-    image: '/projects/project2.svg',
-    technologies: ['Vue.js', 'D3.js', 'Python', 'Django', 'PostgreSQL'],
-    liveUrl: 'https://example-analytics.com',
-    githubUrl: 'https://github.com/yourusername/social-analytics',
-    slug: 'social-media-analytics'
+    title: 'Resume Screening System',
+    description: 'A machine learning-based system for automating resume screening.',
+    longDescription: 'An advanced resume screening system that leverages natural language processing and machine learning algorithms to analyze resumes and identify the best candidates. Features include keyword extraction, candidate ranking, and integration with applicant tracking systems.',
+    image: '/resume.svg',
+    technologies: ['React', 'Python', 'flask', 'mysql'],
+    githubUrl: 'https://github.com/SydDwit/resume-screening',
+    slug: 'resume-screening-system'
   },
   {
     id: 5,
-    title: 'Blog Platform',
-    description: 'A modern blog platform with content management system.',
-    longDescription: 'A feature-rich blog platform with a built-in CMS, SEO optimization, and social sharing capabilities. Supports multiple authors and advanced content management.',
-    image: '/projects/project1.svg',
-    technologies: ['Gatsby', 'GraphQL', 'Contentful', 'Netlify'],
-    liveUrl: 'https://example-blog.com',
-    githubUrl: 'https://github.com/yourusername/blog-platform',
-    slug: 'blog-platform'
+    title: 'my-portfolio',
+    description: 'A modern portfolio website showcasing my work and skills.',
+    longDescription: 'A feature-rich portfolio website with a built-in CMS, SEO optimization, and social sharing capabilities. Supports multiple authors and advanced content management.',
+    image: '/portfolio.svg',
+    technologies: ['React', 'Nextjs'],
+    githubUrl: 'https://github.com/SydDwit/my-portfolio',
+    slug: 'my-portfolio'
   },
   {
     id: 6,
-    title: 'Portfolio Website',
-    description: 'Personal portfolio website with modern design and animations.',
-    longDescription: 'A modern, responsive portfolio website showcasing projects and skills. Features smooth animations, dark mode toggle, and optimized performance.',
+    title: 'Upcoming Project',
+    description: 'upcoming projects',
+    longDescription: 'upcoming',
     image: '/projects/project2.svg',
     technologies: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Framer Motion'],
-    liveUrl: 'https://your-portfolio.com',
-    githubUrl: 'https://github.com/yourusername/portfolio',
-    slug: 'portfolio-website'
+    githubUrl: '',
+    slug: 'upcoming-project'
   }
 ]
