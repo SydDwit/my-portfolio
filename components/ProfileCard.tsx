@@ -49,31 +49,31 @@ export default function ProfileCard({
       <div className="relative z-10 h-full flex flex-col">
         {/* Header with Avatar and Basic Info */}
         <div className="flex items-start gap-4 mb-4">
-          <div className="relative">
+          <div className="relative flex-shrink-0">
             <Image 
               src={avatarSrc} 
               alt={`${name} photo`} 
-              width={80} 
-              height={80} 
-              className={`w-20 h-20 object-cover rounded-xl shadow-md border-2 border-white dark:border-gray-800 transition-all duration-300 ${
+              width={150} 
+              height={150} 
+              className={`w-32 h-32 sm:w-36 sm:h-36 md:w-40 md:h-40 object-cover rounded-xl shadow-md border-2 border-white dark:border-gray-800 transition-all duration-300 ${
                 isHovered ? 'scale-105 shadow-lg' : ''
               }`}
             />
             {/* Enhanced online indicator with pulse */}
-            <div className="absolute -bottom-1 -right-1 w-5 h-5 bg-green-500 rounded-full border-2 border-white dark:border-gray-900 shadow-sm">
-              <div className={`w-1.5 h-1.5 bg-white rounded-full m-1.5 transition-all duration-300 ${
+            <div className="absolute -bottom-1 -right-1 w-5 h-5 sm:w-6 sm:h-6 bg-green-500 rounded-full border-2 border-white dark:border-gray-900 shadow-sm">
+              <div className={`w-1.5 h-1.5 sm:w-2 sm:h-2 bg-white rounded-full m-1.5 sm:m-2 transition-all duration-300 ${
                 isHovered ? 'animate-pulse' : ''
               }`}></div>
             </div>
           </div>
           
           <div className="flex-1">
-            <h3 className={`text-xl font-bold text-gray-900 dark:text-white mb-1 transition-all duration-300 ${
+            <h3 className={`text-base font-bold text-gray-900 dark:text-white mb-1 transition-all duration-300 ${
               isHovered ? 'text-blue-600 dark:text-blue-400' : ''
             }`}>
               {name}
             </h3>
-            <p className="text-sm text-blue-600 dark:text-blue-400 font-medium mb-3 transition-all duration-300">
+            <p className="text-xs text-blue-600 dark:text-blue-400 font-medium mb-3 transition-all duration-300">
               {title}
             </p>
             
@@ -81,9 +81,9 @@ export default function ProfileCard({
             <Link 
               href={resumeHref} 
               target="_blank" 
-              className="inline-flex items-center gap-2 px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg text-sm font-medium transition-all duration-300 shadow-sm hover:shadow-lg hover:scale-105 transform active:scale-95 group/btn"
+              className="inline-flex items-center gap-2 px-3 py-1.5 bg-blue-600 hover:bg-blue-700 text-white rounded-lg text-xs font-medium transition-all duration-300 shadow-sm hover:shadow-lg hover:scale-105 transform active:scale-95 group/btn"
             >
-              <Download size={14} className="transition-transform duration-300 group-hover/btn:rotate-12" />
+              <Download size={12} className="transition-transform duration-300 group-hover/btn:rotate-12" />
               Download Resume
             </Link>
           </div>
@@ -104,9 +104,9 @@ export default function ProfileCard({
           
           {/* Phone */}
           {phone && (
-            <div className="flex items-start gap-2 p-3 rounded-lg bg-gray-50 dark:bg-gray-800/50 border border-gray-200/50 dark:border-gray-700/50 transition-all duration-300 hover:bg-green-50 dark:hover:bg-green-900/20 hover:border-green-200 dark:hover:border-green-700/50 hover:scale-105 group/item">
-              <div className="w-6 h-6 bg-green-100 dark:bg-green-900/50 rounded-lg flex items-center justify-center flex-shrink-0 transition-all duration-300 group-hover/item:bg-green-200 dark:group-hover/item:bg-green-800/70">
-                <Phone size={12} className="text-green-600 dark:text-green-400 transition-all duration-300 group-hover/item:scale-110" />
+            <div className="flex items-start gap-2 p-2.5 rounded-lg bg-gray-50 dark:bg-gray-800/50 border border-gray-200/50 dark:border-gray-700/50 transition-all duration-300 hover:bg-green-50 dark:hover:bg-green-900/20 hover:border-green-200 dark:hover:border-green-700/50 hover:scale-105 group/item">
+              <div className="w-5 h-5 bg-green-100 dark:bg-green-900/50 rounded-lg flex items-center justify-center flex-shrink-0 transition-all duration-300 group-hover/item:bg-green-200 dark:group-hover/item:bg-green-800/70">
+                <Phone size={10} className="text-green-600 dark:text-green-400 transition-all duration-300 group-hover/item:scale-110" />
               </div>
               <div className="min-w-0">
                 <p className="text-xs font-medium text-gray-700 dark:text-gray-300">Phone</p>

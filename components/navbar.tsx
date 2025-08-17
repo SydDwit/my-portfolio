@@ -45,10 +45,20 @@ export default function Navbar() {
 
   // Smooth scroll to section
   const scrollToSection = (sectionId: string) => {
+    console.log('Scrolling to section:', sectionId); // Debug log
     const element = document.getElementById(sectionId)
+    console.log('Element found:', element); // Debug log
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth', block: 'start' })
+      const navbarHeight = 64; // Height of the fixed navbar (h-16 = 4rem = 64px)
+      const elementPosition = element.offsetTop - navbarHeight;
+      console.log('Scrolling to position:', elementPosition); // Debug log
+      window.scrollTo({
+        top: elementPosition,
+        behavior: "smooth"
+      });
       setIsMenuOpen(false) // Close mobile menu after clicking
+    } else {
+      console.error('Element not found:', sectionId); // Debug log
     }
   }
 

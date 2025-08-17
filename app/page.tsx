@@ -11,6 +11,8 @@ import IconBullets from "@/components/IconBullets";
 import Timeline from "@/components/Timeline";
 import LearningJourneyTimeline from "@/components/LearningJourneyTimeline";
 import { projects } from "@/src/data/projects";
+import Image from "next/image";
+import { MapPin, CheckCircle, GraduationCap } from "lucide-react";
 
 export default function Home() {
   const [currentRole, setCurrentRole] = useState(0);
@@ -97,7 +99,14 @@ export default function Home() {
 
   const scrollToSection = (sectionId: string) => {
     const el = document.getElementById(sectionId);
-    if (el) el.scrollIntoView({ behavior: "smooth" });
+    if (el) {
+      const navbarHeight = 64; // Height of the fixed navbar (h-16 = 4rem = 64px)
+      const elementPosition = el.offsetTop - navbarHeight;
+      window.scrollTo({
+        top: elementPosition,
+        behavior: "smooth"
+      });
+    }
   };
 
   return (
@@ -105,7 +114,7 @@ export default function Home() {
       {/* Home Section */}
       <section
         id="home"
-        className="min-h-screen flex items-center justify-center bg-white/90 dark:bg-gray-900/90 relative overflow-hidden z-10 transition-all duration-1000 ease-out"
+        className="min-h-screen flex items-center justify-center relative overflow-hidden z-10 transition-all duration-1000 ease-out"
       >
         {/* Floating Elements */}
         <div className="absolute inset-0 pointer-events-none">
@@ -170,199 +179,214 @@ export default function Home() {
       </section>
 
       {/* About Section */}
-      <section 
-        id="about" 
-        className="min-h-screen py-24 bg-white/90 dark:bg-gray-900/90 relative z-10 transition-all duration-1000 ease-out"
-      >
+      <section id="about" className="min-h-screen py-24 relative z-10 transition-all duration-1000 ease-out">
         <div className="container mx-auto px-4">
-          <FadeIn>
-            <SectionHeading title="About Me" />
-          </FadeIn>
+          <div className="max-w-7xl mx-auto">
+            {/* Main About Content - Two Column Layout */}
+            <FadeIn>
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+                {/* Left Side - Content */}
+                <div className="space-y-8">
+                  <div className="space-y-6">
+                    <p className="text-lg text-gray-300 flex items-center gap-2">
+                      Hi <span className="text-orange-400">✴︎</span> I am <span className="font-semibold text-white">Siddhartha Shakya</span>
+                    </p>
 
-          <div className="max-w-5xl mx-auto mt-16 space-y-16">
-            {/* Enhanced Profile Card with Education */}
-            <FadeIn delay={0.2}>
-              <section className="rounded-2xl border p-6 md:p-8 bg-white/5 backdrop-blur-sm">
-                <ProfileCard
-                  name="Siddhartha Shakya"
-                  title="Full‑Stack Developer · Next.js/TS"
-                  location="Kathmandu, Nepal"
-                  phone="977-9869801351"
-                  nationality="Nepali"
-                  education={{
-                    institution: "Deerwalk College",
-                    degree: "Bachelor in Computer Application"
-                  }}
-                  avatarSrc="/avatar.png"
-                  resumeHref="/resume.pdf"
-                />
-              </section>
-            </FadeIn>
+                    <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-white">
+                      Full-Stack Developer<br />
+                      <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400">
+                        Tailored for Your Success
+                      </span>
+                    </h1>
 
-            {/* Certifications Grid */}
-            <FadeIn delay={0.3}>
-              <div className="space-y-6">
-                <h2 className="text-xl font-semibold text-gray-900 dark:text-white">
-                  Certifications & Achievements
-                </h2>
-                
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  <FadeIn delay={0.4}>
-                    <div className="p-4 bg-gray-50 dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700 hover:border-blue-300 dark:hover:border-blue-600 transition-all duration-300 hover:scale-105 hover:shadow-lg group">
-                      <h3 className="font-medium text-gray-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">DataCamp - Data Analyst</h3>
-                      <p className="text-sm text-gray-600 dark:text-gray-400 mt-1">Certified in data analysis</p>
-                    </div>
-                  </FadeIn>
-                  
-                  <FadeIn delay={0.5}>
-                    <div className="p-4 bg-gray-50 dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700 hover:border-blue-300 dark:hover:border-blue-600 transition-all duration-300 hover:scale-105 hover:shadow-lg group">
-                      <h3 className="font-medium text-gray-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">Python Certification</h3>
-                      <p className="text-sm text-gray-600 dark:text-gray-400 mt-1">Coursera - Advanced Python</p>
-                    </div>
-                  </FadeIn>
-                  
-                  <FadeIn delay={0.6}>
-                    <div className="p-4 bg-gray-50 dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700 hover:border-blue-300 dark:hover:border-blue-600 transition-all duration-300 hover:scale-105 hover:shadow-lg group">
-                      <h3 className="font-medium text-gray-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">Community Leadership</h3>
-                      <p className="text-sm text-gray-600 dark:text-gray-400 mt-1">PatanJCI Digital Initiatives</p>
-                    </div>
-                  </FadeIn>
-                  
-                  <FadeIn delay={0.7}>
-                    <div className="p-4 bg-gray-50 dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700 hover:border-blue-300 dark:hover:border-blue-600 transition-all duration-300 hover:scale-105 hover:shadow-lg group">
-                      <h3 className="font-medium text-gray-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">Blockchain Community</h3>
-                      <p className="text-sm text-gray-600 dark:text-gray-400 mt-1">DWIT - Hackathon Participant</p>
-                    </div>
-                  </FadeIn>
+                    <p className="text-lg text-gray-300 leading-relaxed max-w-xl">
+                      Explore how I can elevate your business to new heights through innovative development strategies. 
+                      I design and build clean, performant web applications with modern technologies and strong user experience.
+                    </p>
+                  </div>
+
+                  <div className="flex flex-col sm:flex-row gap-4">
+                    <a
+                      href="/resume.pdf"
+                      className="inline-flex items-center justify-center gap-2 rounded-xl px-8 py-4 bg-white text-gray-900 font-semibold hover:bg-gray-100 transition-all duration-300 transform hover:scale-105"
+                    >
+                      My Resume
+                      <svg className="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                        <path strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" d="M5 12h14m-7-7l7 7-7 7" />
+                      </svg>
+                    </a>
+                    <a
+                      href="#contact"
+                      className="inline-flex items-center justify-center gap-2 rounded-xl px-8 py-4 border border-gray-400 text-white hover:bg-white/10 transition-all duration-300"
+                    >
+                      Contact Me
+                    </a>
+                  </div>
+
+                  {/* Quick Info Tags */}
+                  <div className="flex flex-wrap gap-3 pt-4">
+                    <span className="px-4 py-2 rounded-full bg-gray-800 border border-gray-600 text-gray-200 text-sm flex items-center gap-2">
+                      <MapPin size={14} className="text-blue-400" />
+                      Kathmandu, Nepal
+                    </span>
+                    <span className="px-4 py-2 rounded-full bg-gray-800 border border-gray-600 text-gray-200 text-sm flex items-center gap-2">
+                      <CheckCircle size={14} className="text-green-400" />
+                      Available for Projects
+                    </span>
+                    <span className="px-4 py-2 rounded-full bg-gray-800 border border-gray-600 text-gray-200 text-sm flex items-center gap-2">
+                      <GraduationCap size={14} className="text-purple-400" />
+                      BCA Student
+                    </span>
+                  </div>
                 </div>
-              </div>
-            </FadeIn>
 
-            {/* Unified Professional Timeline */}
-            <FadeIn delay={0.4}>
-              <div className="space-y-6">
-                <h2 className="text-xl font-semibold text-gray-900 dark:text-white">
-                  Professional Journey
-                </h2>
-                
-                <div className="relative">
-                  {/* Timeline Line */}
-                  <div className="absolute left-4 top-0 bottom-0 w-px bg-gray-300 dark:bg-gray-600"></div>
-                  
-                  <div className="space-y-8">
-                    {/* 2024 - Advanced Development */}
-                    <FadeIn delay={0.5}>
-                      <div className="relative flex items-start gap-6 group hover:scale-[1.02] transition-transform duration-300">
-                        <div className="w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center flex-shrink-0 relative z-10 group-hover:scale-110 transition-transform duration-300 group-hover:shadow-lg group-hover:shadow-blue-500/25">
-                          <div className="w-3 h-3 bg-white rounded-full"></div>
-                        </div>
-                        <div className="flex-1 pb-8 group-hover:bg-gray-50/50 dark:group-hover:bg-gray-800/50 rounded-lg p-4 -ml-4 transition-colors duration-300">
-                          <div className="flex items-center justify-between mb-2">
-                            <h3 className="font-semibold text-gray-900 dark:text-white">Advanced Full-Stack & AI/ML</h3>
-                            <span className="text-sm text-gray-500 dark:text-gray-400 font-medium">2024</span>
-                          </div>
-                          <p className="text-sm text-gray-600 dark:text-gray-400 mb-3">
-                            Diving deep into AI/ML integration and advanced Next.js patterns
-                          </p>
-                          <div className="flex flex-wrap gap-2">
-                            <span className="px-2 py-1 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded text-xs hover:bg-blue-100 hover:text-blue-700 dark:hover:bg-blue-900 dark:hover:text-blue-300 transition-colors">TensorFlow</span>
-                            <span className="px-2 py-1 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded text-xs hover:bg-blue-100 hover:text-blue-700 dark:hover:bg-blue-900 dark:hover:text-blue-300 transition-colors">Scikit-learn</span>
-                            <span className="px-2 py-1 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded text-xs hover:bg-blue-100 hover:text-blue-700 dark:hover:bg-blue-900 dark:hover:text-blue-300 transition-colors">Advanced Next.js</span>
-                          </div>
-                        </div>
-                      </div>
-                    </FadeIn>
-
-                    {/* 2023 - Modern Web */}
-                    <FadeIn delay={0.6}>
-                      <div className="relative flex items-start gap-6 group hover:scale-[1.02] transition-transform duration-300">
-                        <div className="w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center flex-shrink-0 relative z-10 group-hover:scale-110 transition-transform duration-300 group-hover:shadow-lg group-hover:shadow-blue-500/25">
-                          <div className="w-3 h-3 bg-white rounded-full"></div>
-                        </div>
-                        <div className="flex-1 pb-8 group-hover:bg-gray-50/50 dark:group-hover:bg-gray-800/50 rounded-lg p-4 -ml-4 transition-colors duration-300">
-                          <div className="flex items-center justify-between mb-2">
-                            <h3 className="font-semibold text-gray-900 dark:text-white">Modern Web Development</h3>
-                            <span className="text-sm text-gray-500 dark:text-gray-400 font-medium">2023</span>
-                          </div>
-                          <p className="text-sm text-gray-600 dark:text-gray-400 mb-3">
-                            Mastered React ecosystem and TypeScript development
-                          </p>
-                          <div className="flex flex-wrap gap-2">
-                            <span className="px-2 py-1 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded text-xs hover:bg-blue-100 hover:text-blue-700 dark:hover:bg-blue-900 dark:hover:text-blue-300 transition-colors">React</span>
-                            <span className="px-2 py-1 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded text-xs hover:bg-blue-100 hover:text-blue-700 dark:hover:bg-blue-900 dark:hover:text-blue-300 transition-colors">Next.js</span>
-                            <span className="px-2 py-1 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded text-xs hover:bg-blue-100 hover:text-blue-700 dark:hover:bg-blue-900 dark:hover:text-blue-300 transition-colors">TypeScript</span>
-                          </div>
-                        </div>
-                      </div>
-                    </FadeIn>
-
-                    {/* 2022-2023 - PatanJCI Coordinator */}
-                    <FadeIn delay={0.7}>
-                      <div className="relative flex items-start gap-6 group hover:scale-[1.02] transition-transform duration-300">
-                        <div className="w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center flex-shrink-0 relative z-10 group-hover:scale-110 transition-transform duration-300 group-hover:shadow-lg group-hover:shadow-blue-500/25">
-                          <div className="w-3 h-3 bg-white rounded-full"></div>
-                        </div>
-                        <div className="flex-1 pb-8 group-hover:bg-gray-50/50 dark:group-hover:bg-gray-800/50 rounded-lg p-4 -ml-4 transition-colors duration-300">
-                          <div className="flex items-center justify-between mb-2">
-                            <h3 className="font-semibold text-gray-900 dark:text-white">PatanJCI - Digital Transformation Coordinator</h3>
-                            <span className="text-sm text-gray-500 dark:text-gray-400 font-medium">2022-2023</span>
-                          </div>
-                          <p className="text-sm text-gray-600 dark:text-gray-400">
-                            Led digital transformation initiatives and community development projects
-                          </p>
-                        </div>
-                      </div>
-                    </FadeIn>
-
-                    {/* 2022 - Backend Development */}
-                    <FadeIn delay={0.8}>
-                      <div className="relative flex items-start gap-6 group hover:scale-[1.02] transition-transform duration-300">
-                        <div className="w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center flex-shrink-0 relative z-10 group-hover:scale-110 transition-transform duration-300 group-hover:shadow-lg group-hover:shadow-blue-500/25">
-                          <div className="w-3 h-3 bg-white rounded-full"></div>
-                        </div>
-                        <div className="flex-1 pb-8 group-hover:bg-gray-50/50 dark:group-hover:bg-gray-800/50 rounded-lg p-4 -ml-4 transition-colors duration-300">
-                          <div className="flex items-center justify-between mb-2">
-                            <h3 className="font-semibold text-gray-900 dark:text-white">Backend & Database Mastery</h3>
-                            <span className="text-sm text-gray-500 dark:text-gray-400 font-medium">2022</span>
-                          </div>
-                          <p className="text-sm text-gray-600 dark:text-gray-400 mb-3">
-                            Explored server-side development and database design
-                          </p>
-                          <div className="flex flex-wrap gap-2">
-                            <span className="px-2 py-1 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded text-xs hover:bg-blue-100 hover:text-blue-700 dark:hover:bg-blue-900 dark:hover:text-blue-300 transition-colors">Node.js</span>
-                            <span className="px-2 py-1 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded text-xs hover:bg-blue-100 hover:text-blue-700 dark:hover:bg-blue-900 dark:hover:text-blue-300 transition-colors">Python</span>
-                            <span className="px-2 py-1 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded text-xs hover:bg-blue-100 hover:text-blue-700 dark:hover:bg-blue-900 dark:hover:text-blue-300 transition-colors">PostgreSQL</span>
-                          </div>
-                        </div>
-                      </div>
-                    </FadeIn>
-
-                    {/* 2021 - Programming Start */}
-                    <FadeIn delay={0.9}>
-                      <div className="relative flex items-start gap-6 group hover:scale-[1.02] transition-transform duration-300">
-                        <div className="w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center flex-shrink-0 relative z-10 group-hover:scale-110 transition-transform duration-300 group-hover:shadow-lg group-hover:shadow-blue-500/25">
-                          <div className="w-3 h-3 bg-white rounded-full"></div>
-                        </div>
-                        <div className="flex-1 pb-8 group-hover:bg-gray-50/50 dark:group-hover:bg-gray-800/50 rounded-lg p-4 -ml-4 transition-colors duration-300">
-                          <div className="flex items-center justify-between mb-2">
-                            <h3 className="font-semibold text-gray-900 dark:text-white">Programming Foundations</h3>
-                            <span className="text-sm text-gray-500 dark:text-gray-400 font-medium">2021</span>
-                          </div>
-                          <p className="text-sm text-gray-600 dark:text-gray-400 mb-3">
-                            Started with core programming concepts and web basics
-                          </p>
-                          <div className="flex flex-wrap gap-2">
-                            <span className="px-2 py-1 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded text-xs hover:bg-blue-100 hover:text-blue-700 dark:hover:bg-blue-900 dark:hover:text-blue-300 transition-colors">JavaScript</span>
-                            <span className="px-2 py-1 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded text-xs hover:bg-blue-100 hover:text-blue-700 dark:hover:bg-blue-900 dark:hover:text-blue-300 transition-colors">HTML</span>
-                            <span className="px-2 py-1 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded text-xs hover:bg-blue-100 hover:text-blue-700 dark:hover:bg-blue-900 dark:hover:text-blue-300 transition-colors">CSS</span>
-                          </div>
-                        </div>
-                      </div>
-                    </FadeIn>
+                {/* Right Side - Professional Photo */}
+                <div className="flex justify-center lg:justify-end">
+                  <div className="relative">
+                    <div className="relative w-80 h-96 lg:w-96 lg:h-[500px] overflow-hidden rounded-2xl bg-gradient-to-br from-gray-700 to-gray-800">
+                      <Image
+                        src="/avatar.png"
+                        alt="Siddhartha Shakya"
+                        fill
+                        className="object-cover"
+                        priority
+                      />
+                    </div>
+                    {/* Decorative elements */}
+                    <div className="absolute -top-4 -left-4 w-8 h-8 bg-blue-400 rounded-full opacity-60"></div>
+                    <div className="absolute -bottom-4 -right-4 w-12 h-12 bg-purple-400 rounded-full opacity-40"></div>
                   </div>
                 </div>
               </div>
             </FadeIn>
+
+            {/* Education & Achievements Section */}
+            <div className="mt-24 space-y-12">
+              <FadeIn>
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+                  {/* Left Side - Professional Photo */}
+                  <div className="flex justify-center lg:justify-start">
+                    <div className="relative">
+                      <div className="relative w-80 h-96 lg:w-96 lg:h-[500px] overflow-hidden rounded-2xl bg-gradient-to-br from-gray-700 to-gray-800">
+                        <Image
+                          src="/mixed.jpg"
+                          alt="mixed"
+                          fill
+                          className="object-cover"
+                          priority
+                        />
+                      </div>
+                      {/* Decorative elements */}
+                      <div className="absolute -top-4 -right-4 w-8 h-8 bg-blue-400 rounded-full opacity-60"></div>
+                      <div className="absolute -bottom-4 -left-4 w-12 h-12 bg-purple-400 rounded-full opacity-40"></div>
+                    </div>
+                  </div>
+
+                  {/* Right Side - Education & Achievements Content */}
+                  <div className="space-y-8">
+                    <div className="space-y-6">
+                      <h2 className="text-4xl md:text-5xl font-bold leading-tight text-white">
+                        Education &<br />
+                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400">
+                          Achievements
+                        </span>
+                      </h2>
+                    </div>
+
+                    {/* Education Section */}
+                    <div className="space-y-6">
+                      <div className="bg-gray-800/30 backdrop-blur-sm rounded-2xl p-6 border border-gray-700/50">
+                        <div className="flex items-start gap-4">
+                          <div className="flex-shrink-0">
+                            <div className="w-12 h-12 bg-gradient-to-br from-blue-400 to-purple-400 rounded-xl flex items-center justify-center">
+                              <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 14l9-5-9-5-9 5 9 5z"/>
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"/>
+                              </svg>
+                            </div>
+                          </div>
+                          <div className="flex-grow">
+                            <h3 className="text-xl font-bold text-white mb-1">Bachelor in Computer Application</h3>
+                            <p className="text-blue-400 font-semibold mb-2">Deerwalk College</p>
+                            <p className="text-gray-400 text-sm mb-3">2021 - Present</p>
+                            <p className="text-gray-300 text-sm leading-relaxed">
+                              Focused on software engineering, data structures, and modern development practices with hands-on experience in AI/ML projects.
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Certifications Grid */}
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                      <div className="bg-gray-800/30 backdrop-blur-sm rounded-xl p-4 border border-gray-700/50 hover:border-green-400/30 transition-all duration-300">
+                        <div className="flex items-start gap-3">
+                          <div className="flex-shrink-0">
+                            <div className="w-10 h-10 bg-green-500/20 rounded-lg flex items-center justify-center">
+                              <svg className="w-5 h-5 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
+                              </svg>
+                            </div>
+                          </div>
+                          <div className="flex-grow min-w-0">
+                            <h4 className="font-bold text-white text-sm mb-1">DataCamp - Data Analyst</h4>
+                            <p className="text-gray-400 text-xs">Certified in data analysis and visualization</p>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div className="bg-gray-800/30 backdrop-blur-sm rounded-xl p-4 border border-gray-700/50 hover:border-yellow-400/30 transition-all duration-300">
+                        <div className="flex items-start gap-3">
+                          <div className="flex-shrink-0">
+                            <div className="w-10 h-10 bg-yellow-500/20 rounded-lg flex items-center justify-center">
+                              <svg className="w-5 h-5 text-yellow-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/>
+                              </svg>
+                            </div>
+                          </div>
+                          <div className="flex-grow min-w-0">
+                            <h4 className="font-bold text-white text-sm mb-1">Python Certification</h4>
+                            <p className="text-gray-400 text-xs">Coursera - Advanced Python Programming</p>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div className="bg-gray-800/30 backdrop-blur-sm rounded-xl p-4 border border-gray-700/50 hover:border-purple-400/30 transition-all duration-300">
+                        <div className="flex items-start gap-3">
+                          <div className="flex-shrink-0">
+                            <div className="w-10 h-10 bg-purple-500/20 rounded-lg flex items-center justify-center">
+                              <svg className="w-5 h-5 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
+                              </svg>
+                            </div>
+                          </div>
+                          <div className="flex-grow min-w-0">
+                            <h4 className="font-bold text-white text-sm mb-1">Community Leadership</h4>
+                            <p className="text-gray-400 text-xs">PatanJCI Digital Initiatives Leader</p>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div className="bg-gray-800/30 backdrop-blur-sm rounded-xl p-4 border border-gray-700/50 hover:border-blue-400/30 transition-all duration-300">
+                        <div className="flex items-start gap-3">
+                          <div className="flex-shrink-0">
+                            <div className="w-10 h-10 bg-blue-500/20 rounded-lg flex items-center justify-center">
+                              <svg className="w-5 h-5 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/>
+                              </svg>
+                            </div>
+                          </div>
+                          <div className="flex-grow min-w-0">
+                            <h4 className="font-bold text-white text-sm mb-1">Blockchain Community</h4>
+                            <p className="text-gray-400 text-xs">DWIT - Hackathon Participant & Developer</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </FadeIn>
+            </div>
           </div>
         </div>
       </section>
@@ -370,7 +394,7 @@ export default function Home() {
       {/* Skills Section */}
       <section 
         id="skills" 
-        className="min-h-screen py-16 bg-white/90 dark:bg-gray-900/90 relative z-10 transition-all duration-1000 ease-out"
+        className="min-h-screen py-16 relative z-10 transition-all duration-1000 ease-out"
       >
         <div className="container mx-auto px-4">
           <FadeIn>
@@ -483,7 +507,7 @@ export default function Home() {
       {/* Projects Section */}
       <section 
         id="projects" 
-        className="min-h-screen py-16 bg-white/90 dark:bg-gray-900/90 relative z-10 transition-all duration-1000 ease-out"
+        className="min-h-screen py-16 relative z-10 transition-all duration-1000 ease-out"
       >
         <div className="container mx-auto px-4">
           <FadeIn>
@@ -528,7 +552,7 @@ export default function Home() {
       {/* Contact Section */}
       <section
         id="contact"
-        className="min-h-screen py-16 bg-white/90 dark:bg-gray-900/90 relative z-10 transition-all duration-1000 ease-out"
+        className="min-h-screen py-16 relative z-10 transition-all duration-1000 ease-out"
       >
         <div className="container mx-auto px-4">
           <FadeIn>
