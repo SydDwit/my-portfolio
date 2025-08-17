@@ -124,8 +124,8 @@ export default function Home() {
           <div className="absolute bottom-20 right-10 w-2.5 h-2.5 bg-blue-300 rounded-full animate-bounce opacity-50" style={{ animationDelay: '0.5s', animationDuration: '4.5s' }}></div>
           
           {/* Floating shapes */}
-          <div className="absolute top-32 right-1/4 w-8 h-8 border-2 border-blue-300 rotate-45 opacity-30 animate-spin" style={{ animationDuration: '10s' }}></div>
-          <div className="absolute bottom-32 left-1/4 w-6 h-6 border-2 border-purple-300 rounded-full opacity-40 animate-ping" style={{ animationDuration: '3s' }}></div>
+          <div className="absolute top-32 right-1/4 w-8 h-8 border-2 border-blue-400 dark:border-blue-300 rotate-45 opacity-30 animate-spin" style={{ animationDuration: '10s' }}></div>
+          <div className="absolute bottom-32 left-1/4 w-6 h-6 border-2 border-purple-400 dark:border-purple-300 rounded-full opacity-40 animate-ping" style={{ animationDuration: '3s' }}></div>
         </div>
 
         <div className="container mx-auto px-4 text-center relative z-10">
@@ -140,7 +140,7 @@ export default function Home() {
 
           <FadeIn delay={0.2}>
             <div className="h-8 mb-8 flex items-center justify-center">
-              <p className="text-xl md:text-2xl text-gray-600 dark:text-gray-300 font-medium">
+              <p className="text-xl md:text-2xl text-gray-700 dark:text-gray-300 font-medium">
                 <span className="inline-block min-w-0 transition-all duration-500 transform hover:scale-110">
                   {roles[currentRole]}
                 </span>
@@ -170,8 +170,8 @@ export default function Home() {
           {/* Scroll indicator */}
           <FadeIn delay={0.8}>
             <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-              <div className="w-6 h-10 border-2 border-gray-400 dark:border-gray-600 rounded-full flex justify-center">
-                <div className="w-1 h-3 bg-gray-400 dark:bg-gray-600 rounded-full mt-2 animate-pulse"></div>
+              <div className="w-6 h-10 border-2 border-gray-500 dark:border-gray-400 rounded-full flex justify-center">
+                <div className="w-1 h-3 bg-gray-500 dark:bg-gray-400 rounded-full mt-2 animate-pulse"></div>
               </div>
             </div>
           </FadeIn>
@@ -180,7 +180,7 @@ export default function Home() {
 
       {/* Aesthetic Line */}
       <div className="w-full flex justify-center py-8">
-        <div className="w-48 h-0.5 bg-gradient-to-r from-transparent via-white to-transparent opacity-60"></div>
+        <div className="w-48 h-0.5 bg-gradient-to-r from-transparent via-gray-400 dark:via-white to-transparent opacity-60"></div>
       </div>
 
       {/* About Section */}
@@ -193,18 +193,18 @@ export default function Home() {
                 {/* Left Side - Content */}
                 <div className="space-y-8">
                   <div className="space-y-6">
-                    <p className="text-lg text-gray-300 flex items-center gap-2">
-                      Hi <span className="text-orange-400">✴︎</span> I am <span className="font-semibold text-white">Siddhartha Shakya</span>
+                    <p className="text-lg text-gray-700 dark:text-gray-300 flex items-center gap-2">
+                      Hi <span className="text-orange-400">✴︎</span> I am <span className="font-semibold text-gray-900 dark:text-white">Siddhartha Shakya</span>
                     </p>
 
-                    <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-white">
+                    <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-gray-900 dark:text-white">
                       Full-Stack Developer<br />
                       <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400">
                         Tailored for Your Success
                       </span>
                     </h1>
 
-                    <p className="text-lg text-gray-300 leading-relaxed max-w-xl">
+                    <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed max-w-xl">
                       Explore how I can elevate your business to new heights through innovative development strategies. 
                       I design and build clean, performant web applications with modern technologies and strong user experience.
                     </p>
@@ -222,7 +222,7 @@ export default function Home() {
                     </a>
                     <a
                       href="#contact"
-                      className="inline-flex items-center justify-center gap-2 rounded-xl px-8 py-4 border border-gray-400 text-white hover:bg-white/10 transition-all duration-300"
+                      className="inline-flex items-center justify-center gap-2 rounded-xl px-8 py-4 border border-gray-400 dark:border-gray-400 text-gray-900 dark:text-white hover:bg-gray-100 dark:hover:bg-white/10 transition-all duration-300"
                     >
                       Contact Me
                     </a>
@@ -230,15 +230,15 @@ export default function Home() {
 
                   {/* Quick Info Tags */}
                   <div className="flex flex-wrap gap-3 pt-4">
-                    <span className="px-4 py-2 rounded-full bg-gray-800 border border-gray-600 text-gray-200 text-sm flex items-center gap-2">
+                    <span className="px-4 py-2 rounded-full bg-gray-200 dark:bg-gray-800 border border-gray-300 dark:border-gray-600 text-gray-800 dark:text-gray-200 text-sm flex items-center gap-2">
                       <MapPin size={14} className="text-blue-400" />
                       Kathmandu, Nepal
                     </span>
-                    <span className="px-4 py-2 rounded-full bg-gray-800 border border-gray-600 text-gray-200 text-sm flex items-center gap-2">
+                    <span className="px-4 py-2 rounded-full bg-gray-200 dark:bg-gray-800 border border-gray-300 dark:border-gray-600 text-gray-800 dark:text-gray-200 text-sm flex items-center gap-2">
                       <CheckCircle size={14} className="text-green-400" />
                       Available for Projects
                     </span>
-                    <span className="px-4 py-2 rounded-full bg-gray-800 border border-gray-600 text-gray-200 text-sm flex items-center gap-2">
+                    <span className="px-4 py-2 rounded-full bg-gray-200 dark:bg-gray-800 border border-gray-300 dark:border-gray-600 text-gray-800 dark:text-gray-200 text-sm flex items-center gap-2">
                       <GraduationCap size={14} className="text-purple-400" />
                       BCA Student
                     </span>
@@ -290,7 +290,7 @@ export default function Home() {
                   {/* Right Side - Education & Achievements Content */}
                   <div className="space-y-8">
                     <div className="space-y-6">
-                      <h2 className="text-4xl md:text-5xl font-bold leading-tight text-white">
+                      <h2 className="text-4xl md:text-5xl font-bold leading-tight text-gray-900 dark:text-white">
                         Education &<br />
                         <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400">
                           Achievements
@@ -300,7 +300,7 @@ export default function Home() {
 
                     {/* Education Section */}
                     <div className="space-y-6">
-                      <div className="bg-gray-800/30 backdrop-blur-sm rounded-2xl p-6 border border-gray-700/50">
+                      <div className="bg-gray-100 dark:bg-gray-800/30 backdrop-blur-sm rounded-2xl p-6 border border-gray-200 dark:border-gray-700/50">
                         <div className="flex items-start gap-4">
                           <div className="flex-shrink-0">
                             <div className="w-12 h-12 bg-gradient-to-br from-blue-400 to-purple-400 rounded-xl flex items-center justify-center">
@@ -311,10 +311,10 @@ export default function Home() {
                             </div>
                           </div>
                           <div className="flex-grow">
-                            <h3 className="text-xl font-bold text-white mb-1">Bachelor in Computer Application</h3>
+                            <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-1">Bachelor in Computer Application</h3>
                             <p className="text-blue-400 font-semibold mb-2">Deerwalk College</p>
-                            <p className="text-gray-400 text-sm mb-3">2021 - Present</p>
-                            <p className="text-gray-300 text-sm leading-relaxed">
+                            <p className="text-gray-600 dark:text-gray-400 text-sm mb-3">2021 - Present</p>
+                            <p className="text-gray-700 dark:text-gray-300 text-sm leading-relaxed">
                               Focused on software engineering, data structures, and modern development practices with hands-on experience in AI/ML projects.
                             </p>
                           </div>
@@ -324,7 +324,7 @@ export default function Home() {
 
                     {/* Certifications Grid */}
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                      <div className="bg-gray-800/30 backdrop-blur-sm rounded-xl p-4 border border-gray-700/50 hover:border-green-400/30 transition-all duration-300">
+                      <div className="bg-gray-100 dark:bg-gray-800/30 backdrop-blur-sm rounded-xl p-4 border border-gray-200 dark:border-gray-700/50 hover:border-green-400/30 transition-all duration-300">
                         <div className="flex items-start gap-3">
                           <div className="flex-shrink-0">
                             <div className="w-10 h-10 bg-green-500/20 rounded-lg flex items-center justify-center">
@@ -334,13 +334,13 @@ export default function Home() {
                             </div>
                           </div>
                           <div className="flex-grow min-w-0">
-                            <h4 className="font-bold text-white text-sm mb-1">DataCamp - Data Analyst</h4>
-                            <p className="text-gray-400 text-xs">Certified in data analysis and visualization</p>
+                            <h4 className="font-bold text-gray-900 dark:text-white text-sm mb-1">DataCamp - Data Analyst</h4>
+                            <p className="text-gray-600 dark:text-gray-400 text-xs">Certified in data analysis and visualization</p>
                           </div>
                         </div>
                       </div>
 
-                      <div className="bg-gray-800/30 backdrop-blur-sm rounded-xl p-4 border border-gray-700/50 hover:border-yellow-400/30 transition-all duration-300">
+                      <div className="bg-gray-100 dark:bg-gray-800/30 backdrop-blur-sm rounded-xl p-4 border border-gray-200 dark:border-gray-700/50 hover:border-yellow-400/30 transition-all duration-300">
                         <div className="flex items-start gap-3">
                           <div className="flex-shrink-0">
                             <div className="w-10 h-10 bg-yellow-500/20 rounded-lg flex items-center justify-center">
@@ -350,13 +350,13 @@ export default function Home() {
                             </div>
                           </div>
                           <div className="flex-grow min-w-0">
-                            <h4 className="font-bold text-white text-sm mb-1">Python Certification</h4>
-                            <p className="text-gray-400 text-xs">Coursera - Advanced Python Programming</p>
+                            <h4 className="font-bold text-gray-900 dark:text-white text-sm mb-1">Python Certification</h4>
+                            <p className="text-gray-600 dark:text-gray-400 text-xs">Coursera - Advanced Python Programming</p>
                           </div>
                         </div>
                       </div>
 
-                      <div className="bg-gray-800/30 backdrop-blur-sm rounded-xl p-4 border border-gray-700/50 hover:border-purple-400/30 transition-all duration-300">
+                      <div className="bg-gray-100 dark:bg-gray-800/30 backdrop-blur-sm rounded-xl p-4 border border-gray-200 dark:border-gray-700/50 hover:border-purple-400/30 transition-all duration-300">
                         <div className="flex items-start gap-3">
                           <div className="flex-shrink-0">
                             <div className="w-10 h-10 bg-purple-500/20 rounded-lg flex items-center justify-center">
@@ -366,13 +366,13 @@ export default function Home() {
                             </div>
                           </div>
                           <div className="flex-grow min-w-0">
-                            <h4 className="font-bold text-white text-sm mb-1">Community Leadership</h4>
-                            <p className="text-gray-400 text-xs">PatanJCI Digital Initiatives Leader</p>
+                            <h4 className="font-bold text-gray-900 dark:text-white text-sm mb-1">Community Leadership</h4>
+                            <p className="text-gray-600 dark:text-gray-400 text-xs">PatanJCI Digital Initiatives Leader</p>
                           </div>
                         </div>
                       </div>
 
-                      <div className="bg-gray-800/30 backdrop-blur-sm rounded-xl p-4 border border-gray-700/50 hover:border-blue-400/30 transition-all duration-300">
+                      <div className="bg-gray-100 dark:bg-gray-800/30 backdrop-blur-sm rounded-xl p-4 border border-gray-200 dark:border-gray-700/50 hover:border-blue-400/30 transition-all duration-300">
                         <div className="flex items-start gap-3">
                           <div className="flex-shrink-0">
                             <div className="w-10 h-10 bg-blue-500/20 rounded-lg flex items-center justify-center">
@@ -382,8 +382,8 @@ export default function Home() {
                             </div>
                           </div>
                           <div className="flex-grow min-w-0">
-                            <h4 className="font-bold text-white text-sm mb-1">Blockchain Community</h4>
-                            <p className="text-gray-400 text-xs">DWIT - Hackathon Participant & Developer</p>
+                            <h4 className="font-bold text-gray-900 dark:text-white text-sm mb-1">Blockchain Community</h4>
+                            <p className="text-gray-600 dark:text-gray-400 text-xs">DWIT - Hackathon Participant & Developer</p>
                           </div>
                         </div>
                       </div>
@@ -398,7 +398,7 @@ export default function Home() {
 
       {/* Aesthetic Line */}
       <div className="w-full flex justify-center py-8">
-        <div className="w-48 h-0.5 bg-gradient-to-r from-transparent via-white to-transparent opacity-60"></div>
+        <div className="w-48 h-0.5 bg-gradient-to-r from-transparent via-gray-400 dark:via-white to-transparent opacity-60"></div>
       </div>
 
       {/* Skills Section */}
@@ -410,10 +410,10 @@ export default function Home() {
           <div className="max-w-7xl mx-auto">
             <FadeIn>
               <div className="text-center space-y-6 mb-20">
-                <h2 className="text-5xl lg:text-6xl font-light text-white leading-tight">
+                <h2 className="text-5xl lg:text-6xl font-light text-gray-900 dark:text-white leading-tight">
                   Skills & Technologies
                 </h2>
-                <p className="text-xl text-gray-300 leading-relaxed max-w-3xl mx-auto">
+                <p className="text-xl text-gray-700 dark:text-gray-300 leading-relaxed max-w-3xl mx-auto">
                   Strong foundation in full-stack development with experience in AI/ML projects including
                   Diabetes Prediction, Resume Screening System, and Online Voting platforms.
                 </p>
@@ -591,7 +591,7 @@ export default function Home() {
 
       {/* Aesthetic Line */}
       <div className="w-full flex justify-center py-8">
-        <div className="w-48 h-0.5 bg-gradient-to-r from-transparent via-white to-transparent opacity-60"></div>
+        <div className="w-48 h-0.5 bg-gradient-to-r from-transparent via-gray-400 dark:via-white to-transparent opacity-60"></div>
       </div>
 
       {/* Projects Section */}
@@ -602,7 +602,7 @@ export default function Home() {
         <div className="container mx-auto px-4">
           <FadeIn>
             <div className="text-center mb-8">
-              <h2 className="text-5xl lg:text-6xl font-light text-white leading-tight">
+              <h2 className="text-5xl lg:text-6xl font-light text-gray-900 dark:text-white leading-tight">
                 Featured Projects
               </h2>
             </div>
@@ -645,7 +645,7 @@ export default function Home() {
 
       {/* Aesthetic Line */}
       <div className="w-full flex justify-center py-8">
-        <div className="w-48 h-0.5 bg-gradient-to-r from-transparent via-white to-transparent opacity-60"></div>
+        <div className="w-48 h-0.5 bg-gradient-to-r from-transparent via-gray-400 dark:via-white to-transparent opacity-60"></div>
       </div>
 
       {/* Contact Section */}
