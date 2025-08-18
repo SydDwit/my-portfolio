@@ -423,7 +423,7 @@ export default function Home() {
             {/* Main Skills Grid */}
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16">
               <FadeIn delay={0.2}>
-                <div className="bg-white rounded-3xl p-8 lg:p-12 shadow-xl hover:shadow-2xl transition-all duration-500">
+                <div className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-3xl p-8 lg:p-12 shadow-xl hover:shadow-2xl transition-all duration-500 border border-gray-200 dark:border-gray-700">
                   <div className="space-y-6">
                     <div className="flex items-center gap-4">
                       <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-purple-600 rounded-xl flex items-center justify-center">
@@ -432,8 +432,8 @@ export default function Home() {
                         </svg>
                       </div>
                       <div>
-                        <h3 className="text-2xl font-bold text-gray-900">Frontend Development</h3>
-                        <p className="text-gray-600">Modern web interfaces with React ecosystem</p>
+                        <h3 className="text-2xl font-bold text-gray-900 dark:text-white">Frontend Development</h3>
+                        <p className="text-gray-600 dark:text-gray-300">Modern web interfaces with React ecosystem</p>
                       </div>
                     </div>
                     <div className="grid grid-cols-2 gap-3">
@@ -446,9 +446,9 @@ export default function Home() {
                         { name: "Tailwind CSS", logo: <svg className="w-6 h-6" viewBox="0 0 24 24" fill="#06B6D4"><path d="M12.001 4.8c-3.2 0-5.2 1.6-6 4.8 1.2-1.6 2.6-2.2 4.2-1.8.913.228 1.565.89 2.288 1.624C13.666 10.618 15.027 12 18.001 12c3.2 0 5.2-1.6 6-4.8-1.2 1.6-2.6 2.2-4.2 1.8-.913-.228-1.565-.89-2.288-1.624C16.337 6.182 14.976 4.8 12.001 4.8zM6.001 12c-3.2 0-5.2 1.6-6 4.8 1.2-1.6 2.6-2.2 4.2-1.8.913.228 1.565.89 2.288 1.624 1.177 1.194 2.538 2.576 5.512 2.576 3.2 0 5.2-1.6 6-4.8-1.2 1.6-2.6 2.2-4.2 1.8-.913-.228-1.565-.89-2.288-1.624C10.337 13.382 8.976 12 6.001 12z"/></svg> },
                         
                       ].map((tech) => (
-                        <div key={tech.name} className="bg-gray-50 rounded-xl px-4 py-3 flex items-center gap-3 hover:bg-gray-100 transition-colors">
+                        <div key={tech.name} className="bg-gray-50 dark:bg-gray-700/50 rounded-xl px-4 py-3 flex items-center gap-3 hover:bg-gray-100 dark:hover:bg-gray-600/50 transition-colors">
                           {tech.logo}
-                          <span className="text-gray-800 font-medium">{tech.name}</span>
+                          <span className="text-gray-800 dark:text-gray-200 font-medium">{tech.name}</span>
                         </div>
                       ))}
                     </div>
@@ -457,7 +457,7 @@ export default function Home() {
               </FadeIn>
 
               <FadeIn delay={0.3}>
-                <div className="bg-white rounded-3xl p-8 lg:p-12 shadow-xl hover:shadow-2xl transition-all duration-500">
+                <div className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-3xl p-8 lg:p-12 shadow-xl hover:shadow-2xl transition-all duration-500 border border-gray-200 dark:border-gray-700">
                   <div className="space-y-6">
                     <div className="flex items-center gap-4">
                       <div className="w-12 h-12 bg-gradient-to-br from-green-500 to-teal-600 rounded-xl flex items-center justify-center">
@@ -466,8 +466,8 @@ export default function Home() {
                         </svg>
                       </div>
                       <div>
-                        <h3 className="text-2xl font-bold text-gray-900">Backend Development</h3>
-                        <p className="text-gray-600">Scalable server-side applications and APIs</p>
+                        <h3 className="text-2xl font-bold text-gray-900 dark:text-white">Backend Development</h3>
+                        <p className="text-gray-600 dark:text-gray-300">Scalable server-side applications and APIs</p>
                       </div>
                     </div>
                     <div className="grid grid-cols-2 gap-3">
@@ -479,9 +479,9 @@ export default function Home() {
                         { name: "FastAPI", logo: <svg className="w-6 h-6" viewBox="0 0 24 24" fill="#009688"><circle cx="12" cy="12" r="10" fill="#009688"/><path d="M8 8l8 8M8 16l8-8" stroke="white" strokeWidth="2"/></svg> },
                         { name: "Express.js", logo: <svg className="w-6 h-6" viewBox="0 0 24 24" fill="#000000"><path d="M24 18.588a1.529 1.529 0 01-1.895-.72l-3.45-4.771-.5-.667-4.003 5.444a1.466 1.466 0 01-1.802.708l5.158-6.92-4.798-6.251a1.595 1.595 0 011.9.666l3.576 4.83 3.596-4.81a1.435 1.435 0 011.788-.668L21.708 7.9l-2.522 3.283a.666.666 0 000 .994l2.814 3.794z"/><path d="M.002 11.576l.42-2.075c1.154-4.103 5.858-5.81 9.094-3.27 1.895 1.489 2.368 3.597 2.275 5.973H1.116C.943 16.447 4.005 19.009 7.92 17.7a4.078 4.078 0 002.582-2.876c.207-.666.548-.78 1.174-.588a5.417 5.417 0 01-2.589 3.957c-2.864 1.607-6.509.018-7.394-2.036A4.904 4.904 0 01.002 11.576zM8.618 10.142c-1.788-2.953-6.207-2.953-8.015 0-.42.42-.42 1.154 0 1.575.42.42 1.154.42 1.575 0 1.346-1.788 4.519-1.788 5.865 0 .42.42 1.154.42 1.575 0 .42-.421.42-1.155 0-1.575z"/></svg> }
                       ].map((tech) => (
-                        <div key={tech.name} className="bg-gray-50 rounded-xl px-4 py-3 flex items-center gap-3 hover:bg-gray-100 transition-colors">
+                        <div key={tech.name} className="bg-gray-50 dark:bg-gray-700/50 rounded-xl px-4 py-3 flex items-center gap-3 hover:bg-gray-100 dark:hover:bg-gray-600/50 transition-colors">
                           {tech.logo}
-                          <span className="text-gray-800 font-medium">{tech.name}</span>
+                          <span className="text-gray-800 dark:text-gray-200 font-medium">{tech.name}</span>
                         </div>
                       ))}
                     </div>
@@ -490,7 +490,7 @@ export default function Home() {
               </FadeIn>
 
               <FadeIn delay={0.4}>
-                <div className="bg-white rounded-3xl p-8 lg:p-12 shadow-xl hover:shadow-2xl transition-all duration-500">
+                <div className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-3xl p-8 lg:p-12 shadow-xl hover:shadow-2xl transition-all duration-500 border border-gray-200 dark:border-gray-700">
                   <div className="space-y-6">
                     <div className="flex items-center gap-4">
                       <div className="w-12 h-12 bg-gradient-to-br from-orange-500 to-red-600 rounded-xl flex items-center justify-center">
@@ -499,8 +499,8 @@ export default function Home() {
                         </svg>
                       </div>
                       <div>
-                        <h3 className="text-2xl font-bold text-gray-900">Database & Tools</h3>
-                        <p className="text-gray-600">Data management and development workflow</p>
+                        <h3 className="text-2xl font-bold text-gray-900 dark:text-white">Database & Tools</h3>
+                        <p className="text-gray-600 dark:text-gray-300">Data management and development workflow</p>
                       </div>
                     </div>
                     <div className="grid grid-cols-2 gap-3">
@@ -513,9 +513,9 @@ export default function Home() {
                         { name: "VS Code", logo: <svg className="w-6 h-6" viewBox="0 0 24 24" fill="#007ACC"><path d="M23.15 2.587L18.21.21a1.494 1.494 0 0 0-1.705.29l-9.46 8.63-4.12-3.128a.999.999 0 0 0-1.276.057L.327 7.261A1 1 0 0 0 .326 8.74L3.899 12 .326 15.26a1 1 0 0 0 .001 1.479L1.65 17.94a.999.999 0 0 0 1.276.057l4.12-3.128 9.46 8.63a1.492 1.492 0 0 0 1.704.29l4.942-2.377A1.5 1.5 0 0 0 24 20.06V3.939a1.5 1.5 0 0 0-.85-1.352zm-5.146 14.861L10.826 12l7.178-5.448v10.896z"/></svg> },
                        
                       ].map((tech) => (
-                        <div key={tech.name} className="bg-gray-50 rounded-xl px-4 py-3 flex items-center gap-3 hover:bg-gray-100 transition-colors">
+                        <div key={tech.name} className="bg-gray-50 dark:bg-gray-700/50 rounded-xl px-4 py-3 flex items-center gap-3 hover:bg-gray-100 dark:hover:bg-gray-600/50 transition-colors">
                           {tech.logo}
-                          <span className="text-gray-800 font-medium">{tech.name}</span>
+                          <span className="text-gray-800 dark:text-gray-200 font-medium">{tech.name}</span>
                         </div>
                       ))}
                     </div>
@@ -524,7 +524,7 @@ export default function Home() {
               </FadeIn>
 
               <FadeIn delay={0.5}>
-                <div className="bg-white rounded-3xl p-8 lg:p-12 shadow-xl hover:shadow-2xl transition-all duration-500">
+                <div className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-3xl p-8 lg:p-12 shadow-xl hover:shadow-2xl transition-all duration-500 border border-gray-200 dark:border-gray-700">
                   <div className="space-y-6">
                     <div className="flex items-center gap-4">
                       <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-600 rounded-xl flex items-center justify-center">
@@ -533,8 +533,8 @@ export default function Home() {
                         </svg>
                       </div>
                       <div>
-                        <h3 className="text-2xl font-bold text-gray-900">AI/ML & Data Science</h3>
-                        <p className="text-gray-600">Machine learning and intelligent systems</p>
+                        <h3 className="text-2xl font-bold text-gray-900 dark:text-white">AI/ML & Data Science</h3>
+                        <p className="text-gray-600 dark:text-gray-300">Machine learning and intelligent systems</p>
                       </div>
                     </div>
                     <div className="grid grid-cols-2 gap-3">
@@ -546,9 +546,9 @@ export default function Home() {
                         { name: "Scikit-learn", logo: <svg className="w-6 h-6" viewBox="0 0 24 24" fill="#F7931E"><path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 6.62 5.367 11.987 11.988 11.987 6.62 0 11.987-5.367 11.987-11.987C24.005 5.367 18.637.001 12.017.001zM8.542 10.467a3.521 3.521 0 117.043 0 3.521 3.521 0 01-7.043 0zm7.043 3.521a3.521 3.521 0 11-7.043 0 3.521 3.521 0 017.043 0z"/></svg> },
                         { name: "Pandas", logo: <svg className="w-6 h-6" viewBox="0 0 24 24" fill="#150458"><path d="M16.956 0h2.261v16.86c0 3.395-1.211 5.27-4.067 5.27-2.098 0-3.84-1.347-3.84-3.395 0-1.787 1.347-3.083 3.185-3.083 1.211 0 2.098.656 2.461 1.647V0zM9.622 3.603H7.36c-2.856 0-4.067 1.875-4.067 5.27v12.264h2.262V8.873c0-1.787 1.347-3.27 3.067-3.27z"/></svg> }
                       ].map((tech) => (
-                        <div key={tech.name} className="bg-gray-50 rounded-xl px-4 py-3 flex items-center gap-3 hover:bg-gray-100 transition-colors">
+                        <div key={tech.name} className="bg-gray-50 dark:bg-gray-700/50 rounded-xl px-4 py-3 flex items-center gap-3 hover:bg-gray-100 dark:hover:bg-gray-600/50 transition-colors">
                           {tech.logo}
-                          <span className="text-gray-800 font-medium">{tech.name}</span>
+                          <span className="text-gray-800 dark:text-gray-200 font-medium">{tech.name}</span>
                         </div>
                       ))}
                     </div>
