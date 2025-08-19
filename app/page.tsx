@@ -255,10 +255,11 @@ export default function Home() {
                     </h1>
 
                     <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed max-w-xl">
-                      Explore how I can elevate your business to new heights
-                      through innovative development strategies. I design and
-                      build clean, performant web applications with modern
-                      technologies and strong user experience.
+                      I enjoy building web applications with modern
+                      technologies, focusing on clean design and good user
+                      experience. I&apos;m always curious to explore new tools and
+                      approaches that help create applications which are both
+                      functional and enjoyable to use.
                     </p>
                   </div>
 
